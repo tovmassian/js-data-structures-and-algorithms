@@ -1,0 +1,25 @@
+{
+	"name": "js-data-structures",
+	"version": "0.0.1",
+	"description": "In this package there will be an implementation of common JavaScript Data Structures",
+	"main": "index.js",
+	"scripts": {
+		"build": "tsc -p .",
+		"test": "npm run build && rm -rf coverage && istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly --report html ./dist/test/**/*Spec.js -- -R spec",
+		"lint": "tslint --project ."
+	},
+	"author": "Khachatur Tovmasyan",
+	"license": "ISC",
+	"dependencies": {
+		"typescript": "^3.5.3",
+		"tslint": "^5.14.0"
+	},
+	"devDependencies": {
+		"@types/node": "^10.11.6",
+		"@types/mocha": "^5.2.5",
+		"@types/chai": "^4.1.6",
+		"mocha": "^5.2.0",
+		"chai": "^4.2.0",
+		"istanbul": "^0.4.5"
+	}
+}
