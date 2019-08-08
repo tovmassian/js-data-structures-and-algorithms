@@ -1,26 +1,26 @@
 export default class Stack {
-	public count: number = 0;
-	public storage: any = {};
+	private count: number = 0;
+	private storage: any = {};
 
-	constructor(initialStorage?: any) {
+	constructor(initialStack?: any) {
 
-		if (typeof initialStorage === 'undefined') {
+		if (typeof initialStack === 'undefined') {
 			return;
 		}
 
-		if (Array.isArray(initialStorage)) {
-			for (let i = 0; i < initialStorage.length; i++) {
-				this.storage[i] = initialStorage[i];
+		if (Array.isArray(initialStack)) {
+			for (let i = 0; i < initialStack.length; i++) {
+				this.storage[i] = initialStack[i];
 				this.count++;
 			}
 		} else {
-			this.storage[0] = initialStorage;
+			this.storage[0] = initialStack;
 			this.count++;
 		}
 	}
 
-	public push(value: any): void {
-		this.storage[this.count] = value;
+	public push(element: any): void {
+		this.storage[this.count] = element;
 		this.count++;
 	}
 
@@ -35,11 +35,11 @@ export default class Stack {
 		return deletedElement;
     }
 
-    public peek(): any {
+    public peak(): any {
     	return this.storage[this.count - 1];
 	}
 
-	public length(): number {
+	public size(): number {
     	return this.count;
 	}
 }
