@@ -90,25 +90,7 @@ describe('Stack', () => {
 		});
 	});
 
-	describe('peak', () => {
-		beforeEach( () => {
-			newStack = new Stack(['something', null, 5]);
-		});
-
-		it('should have 5 as the peak element of newStack storage', () => {
-			const peakElement = newStack.peak();
-			expect(peakElement).to.eq(5);
-		});
-
-		it('should have "something" as the peak element of newStack storage', () => {
-			newStack.pop();
-			newStack.pop();
-			const peakElement = newStack.peak();
-			expect(peakElement).to.eq('something');
-		});
-	});
-
-	describe('length', () => {
+	describe('size', () => {
 		beforeEach( () => {
 			newStack = new Stack(['something', null, 5]);
 		});
