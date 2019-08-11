@@ -100,15 +100,32 @@ describe('Queue', () => {
 		});
 
 		it('should return 3 by default', () => {
-			const storageSize = newQueue.size();
-			expect(storageSize).to.eq(3);
+			queueSize = newQueue.size();
+			expect(queueSize).to.eq(3);
 		});
 
 		it('should return 1 after de-queuing two items', () => {
 			newQueue.dequeue();
 			newQueue.dequeue();
-			const storageSize = newQueue.size();
-			expect(storageSize).to.eq(1);
+			queueSize = newQueue.size();
+			expect(queueSize).to.eq(1);
+		});
+	});
+
+	describe('getQueueElements', () => {
+		it('should return queue elements as an array', () => {
+			newQueue = new Queue(['something', null, 5]);
+			const queueElements = newQueue.getQueueElements();
+			expect(queueElements).to.eql(['something', null, 5]);
+		});
+	});
+
+	describe('setQueueElement', () => {
+		it('should set passed elements to the queue', () => {
+			newQueue = new Queue();
+			newQueue.setQueueElements([null, 5, 'something']);
+			const queueElements = newQueue.getQueueElements();
+			expect(queueElements).to.eql([null, 5, 'something']);
 		});
 	});
 });

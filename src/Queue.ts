@@ -31,4 +31,12 @@ export default class Queue {
 	public size(): number {
     	return this.collection.length;
 	}
+
+	public getQueueElements(): any[] {
+		return this.collection;
+	}
+
+	public setQueueElements(elements: any): void {
+		this.collection = elements;
+	}
 }
