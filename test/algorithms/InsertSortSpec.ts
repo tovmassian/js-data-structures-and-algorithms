@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { insertSort } from '../../src/algorithms/InsertSort';
 
-describe('InserSort', () => {
+describe('InsertSort', () => {
   const testInsertSort = ({
     originalArray,
     sortedArray,
